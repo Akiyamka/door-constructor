@@ -28,7 +28,8 @@ export default {
       <label for="design-inside">Полотно</label>
       <el-select
         :value="leaf"
-        @change="setLeaf">
+        @change="setLeaf"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -42,7 +43,8 @@ export default {
       <label for="design-inside">Наличник</label>
       <el-select
         :value="jamb"
-        @change="setJamb">
+        @change="setJamb"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -56,7 +58,8 @@ export default {
       <label for="design-inside">Накладка</label>
       <el-select
         :value="onlay"
-        @change="setOnlay">
+        @change="setOnlay"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -70,7 +73,8 @@ export default {
       <label for="design-inside">Стеклопакет</label>
       <el-select
         :value="glass"
-        @change="setGlass">
+        @change="setGlass"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.glass"
           :key="item.value"

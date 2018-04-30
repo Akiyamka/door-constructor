@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="form-unit" @focus="() => console.log('test')">
+    <div class="form-unit">
       <el-select
         @focus="$emit('focus')"
         :value="series"

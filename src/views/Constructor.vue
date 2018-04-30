@@ -16,6 +16,14 @@ export default {
   name: 'home',
   components: {
     ctFieldset,
+    doorCode,
+  },
+  beforeCreate() {
+    this.$constants = constants;
+    this.$blocks = blocks;
+  },
+  data: () => ({
+    selected: 1,
     blockSeries,
     blockDesigns,
     blockFittings,
@@ -23,18 +31,56 @@ export default {
     blockMaterialInside,
     blockBox,
     blockSizes,
-    doorCode
-  },
-  created() {
-    this.$constants = constants;
-    this.$blocks = blocks;
-  },
-  data: () => ({
-    selected: 1
   }),
   computed: {
     artCode() {
       return this.selected;
+    },
+    form() {
+      return [
+        {
+          label: 'Серия',
+          type: this.$blocks && this.$blocks.BLOCK_SERIES,
+          block: this.blockSeries,
+          class: 'series',
+        },
+        {
+          label: 'Дизайн',
+          type: this.$blocks && this.$blocks.BLOCK_DESIGN,
+          block: this.blockDesigns,
+          class: 'design',
+        },
+        {
+          label: 'Фурнитура',
+          type: this.$blocks && this.$blocks.BLOCK_FITTINGS,
+          block: this.blockFittings,
+          class: 'fittings',
+        },
+        {
+          label: 'Полотно снаружи',
+          type: this.$blocks && this.$blocks.BLOCK_MATERIAL_OUTSIDE,
+          block: this.blockMaterialOutside,
+          class: 'material',
+        },
+        {
+          label: 'Полотно внутри',
+          type: this.$blocks && this.$blocks.BLOCK_MATERIAL_INSIDE,
+          block: this.blockMaterialInside,
+          class: 'material',
+        },
+        {
+          label: 'Коробка',
+          type: this.$blocks && this.$blocks.BLOCK_BOX,
+          block: this.blockBox,
+          class: 'box',
+        },
+        {
+          label: 'Габариты',
+          type: this.$blocks && this.$blocks.BLOCK_SIZES,
+          block: this.blockSizes,
+          class: 'size',
+        },
+      ]
     }
   }
 };
@@ -42,41 +88,16 @@ export default {
 
 <template>
   <section class="constructor-grid">
-
     <aside class="constructor-grid__side-menu">
 
       <ct-fieldset
-        label="Серия"
-        :blockType="$blocks.BLOCK_SERIES"
+        v-for="fildset in form"
+        :label="fildset.label"
+        :blockType="fildset.type"
+        :block="fildset.block"
+        :key="fildset.type"
+        :block-class="fildset.class"
         >
-        <template scope="{ catchFocus }">
-            <block-series @focus="catchFocus"/>
-        </template>
-
-      </ct-fieldset>
-
-      <ct-fieldset label="Дизайн">
-        <block-designs />
-      </ct-fieldset>
-
-      <ct-fieldset label="Фарнитура">
-        <block-fittings />
-      </ct-fieldset>
-
-      <ct-fieldset label="Полотно снаружи">
-        <block-material-outside />
-      </ct-fieldset>
-
-      <ct-fieldset label="Полотно внутри">
-        <block-material-inside />
-      </ct-fieldset>
-
-      <ct-fieldset label="Коробка">
-        <block-box />
-      </ct-fieldset>
-
-      <ct-fieldset label="Габариты">
-        <block-sizes />
       </ct-fieldset>
 
     </aside>

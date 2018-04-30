@@ -21,7 +21,8 @@ export default {
     <label for="design-inside">Материал</label>
       <el-select
         :value="material"
-        @change="setBoxMaterial">
+        @change="setBoxMaterial"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -35,7 +36,8 @@ export default {
       <label for="design-inside">Способ установки</label>
       <el-select
         :value="install"
-        @change="setBoxInstall">
+        @change="setBoxInstall"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.installing"
           :key="item.value"

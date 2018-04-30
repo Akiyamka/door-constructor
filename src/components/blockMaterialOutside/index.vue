@@ -27,6 +27,7 @@ export default {
      <div class="form-unit">
       <label for="design-inside">Полотно</label>
       <el-select
+        @focus="$emit('focus')"
         :value="leaf"
         @change="setLeaf">
         <el-option
@@ -41,6 +42,7 @@ export default {
     <div class="form-unit">
       <label for="design-inside">Наличник</label>
       <el-select
+        @focus="$emit('focus')"
         :value="jamb"
         @change="setJamb">
         <el-option
@@ -55,6 +57,7 @@ export default {
     <div class="form-unit">
       <label for="design-inside">Накладка</label>
       <el-select
+        @focus="$emit('focus')"
         :value="onlay"
         @change="setOnlay">
         <el-option
@@ -69,6 +72,7 @@ export default {
     <div class="form-unit">
       <label for="design-inside">Стеклопакет</label>
       <el-select
+        @focus="$emit('focus')"
         :value="glass"
         @change="setGlass">
         <el-option

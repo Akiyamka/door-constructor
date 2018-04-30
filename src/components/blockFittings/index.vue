@@ -22,7 +22,8 @@ export default {
       <label for="design-inside">Тип наружней ручки</label>
       <el-select
         :value="outsideKnob"
-        @change="setOutsideKnob">
+        @change="setOutsideKnob"
+        @focus="$emit('focus')">
           <el-option
             v-for="item in $constants.knobs"
             :key="item.value"
@@ -36,7 +37,8 @@ export default {
       <label for="design-inside">Тип внутренней ручки</label>
       <el-select
         :value="insideKnob"
-        @change="setInsideKnob">
+        @change="setInsideKnob"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.knobs"
           :key="item.value"
@@ -50,7 +52,8 @@ export default {
       <label for="design-inside">Тип замка</label>
       <el-select
         :value="lock"
-        @change="setLock">
+        @change="setLock"
+        @focus="$emit('focus')">
           <el-option
             v-for="item in $constants.locks"
             :key="item.value"

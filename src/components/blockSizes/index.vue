@@ -3,6 +3,7 @@
     <div class="form-unit">
       <label for="design-inside">Ширина</label>
       <el-select
+        @focus="$emit('focus')"
         v-model="value"
         placeholder="Select">
         <el-option
@@ -17,6 +18,7 @@
     <div class="form-unit">
       <label for="design-inside">Высота</label>
       <el-select
+        @focus="$emit('focus')"
         v-model="value"
         placeholder="Select">
         <el-option

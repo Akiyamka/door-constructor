@@ -23,7 +23,8 @@ export default {
         id="design-inside"
         :value="designInside"
         @change="setDesignInside"
-        placeholder="Дизайн внутри">
+        placeholder="Дизайн внутри"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.designs"
           :key="item.value"
@@ -40,7 +41,8 @@ export default {
         id="design-outside"
         :value="designOutside"
         @change="setDesignOutside"
-        placeholder="Дизайн снаружи">
+        placeholder="Дизайн снаружи"
+        @focus="$emit('focus')">
         <el-option
           v-for="item in $constants.designs"
           :key="item.value"
