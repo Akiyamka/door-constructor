@@ -18,8 +18,9 @@ export default {
 <template>
   <div>
     <div class="form-unit">
-    <label for="design-inside">Материал</label>
+    <label for="box-material">Материал</label>
       <el-select
+        id="box-material"
         :value="material"
         @change="setBoxMaterial"
         @focus="$emit('focus')">
@@ -33,8 +34,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Способ установки</label>
+      <label for="box-install">Способ установки</label>
       <el-select
+        id="box-install"
         :value="install"
         @change="setBoxInstall"
         @focus="$emit('focus')">

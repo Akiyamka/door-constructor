@@ -11,12 +11,14 @@ import blockBox from '@/components/blockBox';
 import blockSizes from '@/components/blockSizes';
 import doorCode from '@/components/doorCode';
 import blocks from '@/data/blocks';
+import copyToClipboard from '@/components/copyToClipboard';
 
 export default {
   name: 'home',
   components: {
     ctFieldset,
     doorCode,
+    copyToClipboard
   },
   beforeCreate() {
     this.$constants = constants;
@@ -104,7 +106,7 @@ export default {
 
     <section class="constructor-grid__top-bar">
       <door-code />
-      <!-- <CopyToClipboardBtn /> -->
+      <copy-to-clipboard />
     </section>
     <section class="constructor-grid__main-field">
       <!-- <MainView /> -->

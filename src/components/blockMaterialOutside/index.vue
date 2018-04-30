@@ -25,8 +25,9 @@ export default {
 <template>
   <div>
      <div class="form-unit">
-      <label for="design-inside">Полотно</label>
+      <label for="material-outside-leaf">Полотно</label>
       <el-select
+        id="material-outside-leaf"
         @focus="$emit('focus')"
         :value="leaf"
         @change="setLeaf">
@@ -40,8 +41,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Наличник</label>
+      <label for="material-outside-jamb">Наличник</label>
       <el-select
+        id="material-outside-jamb"
         @focus="$emit('focus')"
         :value="jamb"
         @change="setJamb">
@@ -55,8 +57,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Накладка</label>
+      <label for="material-outside-onlay">Накладка</label>
       <el-select
+        id="material-outside-onlay"
         @focus="$emit('focus')"
         :value="onlay"
         @change="setOnlay">
@@ -70,8 +73,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Стеклопакет</label>
+      <label for="material-outside-glass">Стеклопакет</label>
       <el-select
+        id="material-outside-glass"
         @focus="$emit('focus')"
         :value="glass"
         @change="setGlass">

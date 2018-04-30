@@ -19,8 +19,9 @@ export default {
 <template>
   <div>
     <div class="form-unit">
-      <label for="design-inside">Тип наружней ручки</label>
+      <label for="fittings-outside">Тип наружней ручки</label>
       <el-select
+        id="fittings-outside"
         :value="outsideKnob"
         @change="setOutsideKnob"
         @focus="$emit('focus')">
@@ -34,8 +35,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Тип внутренней ручки</label>
+      <label for="fittings-inside">Тип внутренней ручки</label>
       <el-select
+        id="fittings-inside"
         :value="insideKnob"
         @change="setInsideKnob"
         @focus="$emit('focus')">
@@ -49,8 +51,9 @@ export default {
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Тип замка</label>
+      <label for="fittings-lock">Тип замка</label>
       <el-select
+        id="fittings-lock"
         :value="lock"
         @change="setLock"
         @focus="$emit('focus')">

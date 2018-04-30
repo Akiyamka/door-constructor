@@ -1,44 +1,61 @@
+<script>
+import { mapState } from 'vuex';
+import { mapMutations } from 'vuex';
+
+export default {
+  props: {},
+  computed: {
+    ...mapState({
+      width: state => Number(state.size.width),
+      height: state => Number(state.size.height)
+    }),
+  },
+  methods: {
+    ...mapMutations(['setWidth', 'setHeight'])
+  }
+};
+
+</script>
+
 <template>
   <div>
     <div class="form-unit">
-      <label for="design-inside">Ширина</label>
-      <el-select
-        @focus="$emit('focus')"
-        v-model="value"
-        placeholder="Select">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
+      <label for="sizes-width">Ширина</label>
+       <el-input-number
+         id="sizes-width"
+         @focus="$emit('focus')"
+         @input="setWidth"
+         :value="width"
+         :min="100"
+         :max="10000"
+         controls-position="right">
+       </el-input-number>
     </div>
 
     <div class="form-unit">
-      <label for="design-inside">Высота</label>
-      <el-select
-        @focus="$emit('focus')"
-        v-model="value"
-        placeholder="Select">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
+      <label for="sizes-height">Высота</label>
+       <el-input-number
+         id="sizes-height"
+         @focus="$emit('focus')"
+         @input="setHeight"
+         :value="height"
+         :min="100"
+         :max="10000"
+         controls-position="right">
+       </el-input-number>
     </div>
+
   </div>
 </template>
 
-<script>
-import constants from '@/data/';
-export default {
-  props: {},
-  data: () => ({
-    options: constants.doorSeries,
-    value: '0'
-  })
-};
-</script>
+<style scoped>
+ .el-input-number {
+   width: 100%
+ }
+</style>
+
+<style>
+.el-input-number .el-input .el-input__inner {
+  text-align: left;
+}
+</style>

@@ -4,7 +4,6 @@ import { mapMutations } from 'vuex';
 import constants from '@/data/';
 
 export default {
-  props: { blockType: String },
   created() {
     this.$constants = constants;
   },

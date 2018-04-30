@@ -1,6 +1,6 @@
 export default {
   state: {
-    series: 'Аксона'
+    series: '0'
   },
   mutations: {
     setSeries(state, series) {
