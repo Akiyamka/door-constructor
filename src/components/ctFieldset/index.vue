@@ -1,17 +1,32 @@
-<template>
-  <div class="fieldset">
-      <legend>{{ label }}</legend>
-      <slot></slot>
-  </div>
-</template>
-
 <script>
+import { mapState } from 'vuex';
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
-    label: String
+    label: String,
+    blockType: String,
+  },
+  computed: mapState({
+    activeBlock: state => state.activeBlock
+  }),
+  methods: {
+    ...mapMutations(['setActiveBlock']),
+    catchFocus() {
+      console.log('Focus event')
+    }
   }
 };
 </script>
+
+<template>
+  <div
+      :class="['fieldset', { active: activeBlock === blockType }]"
+      @focus="(e) => console.log(e)">
+      <legend>{{ label }}</legend>
+      <slot :catchFocus="catchFocus"></slot>
+  </div>
+</template>
 
 <style scoped lang="stylus">
 .fieldset

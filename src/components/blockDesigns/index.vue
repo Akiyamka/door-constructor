@@ -11,10 +11,7 @@ export default {
     designOutside: state => state.designs.designOutside,
     designInside: state => state.designs.designInside
   }),
-  methods: mapMutations([
-    'setDesignOutside',
-    'setDesignInside'
-  ])
+  methods: mapMutations(['setDesignOutside', 'setDesignInside'])
 };
 </script>
 

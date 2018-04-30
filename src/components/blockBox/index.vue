@@ -11,10 +11,7 @@ export default {
     material: state => state.box.material,
     install: state => state.box.install
   }),
-  methods: mapMutations([
-    'setBoxMaterial',
-    'setBoxInstall'
-  ])
+  methods: mapMutations(['setBoxMaterial', 'setBoxInstall'])
 };
 </script>
 

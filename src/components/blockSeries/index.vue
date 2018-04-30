@@ -1,26 +1,28 @@
 <script>
 import { mapState } from 'vuex';
-import { mapMutations } from 'vuex'
+import { mapMutations } from 'vuex';
 import constants from '@/data/';
 
 export default {
-  props: {},
+  props: { blockType: String },
   created() {
     this.$constants = constants;
   },
-  computed: mapState({
-    series: state => state.series.series
-  }),
-  methods: mapMutations([
-    'setSeries'
-  ])
+  computed: {
+    ...mapState({
+      series: state => state.series.series
+    }),
+  },
+  methods: {
+    ...mapMutations(['setSeries'])
+  }
 };
 </script>
 
 <template>
-  <div>
-    <div class="form-unit">
+    <div class="form-unit" @focus="() => console.log('test')">
       <el-select
+        @focus="$emit('focus')"
         :value="series"
         @change="setSeries">
         <el-option
@@ -31,5 +33,4 @@ export default {
         </el-option>
       </el-select>
     </div>
-  </div>
 </template>

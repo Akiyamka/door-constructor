@@ -12,11 +12,7 @@ export default {
     outsideKnob: state => state.fittings.outsideKnob,
     insideKnob: state => state.fittings.insideKnob
   }),
-  methods: mapMutations([
-    'setLock',
-    'setOutsideKnob',
-    'setInsideKnob'
-  ])
+  methods: mapMutations(['setLock', 'setOutsideKnob', 'setInsideKnob'])
 };
 </script>
 

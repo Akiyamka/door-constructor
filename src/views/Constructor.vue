@@ -9,6 +9,8 @@ import blockMaterialOutside from '@/components/blockMaterialOutside';
 import blockMaterialInside from '@/components/blockMaterialInside';
 import blockBox from '@/components/blockBox';
 import blockSizes from '@/components/blockSizes';
+import doorCode from '@/components/doorCode';
+import blocks from '@/data/blocks';
 
 export default {
   name: 'home',
@@ -20,10 +22,12 @@ export default {
     blockMaterialOutside,
     blockMaterialInside,
     blockBox,
-    blockSizes
+    blockSizes,
+    doorCode
   },
   created() {
     this.$constants = constants;
+    this.$blocks = blocks;
   },
   data: () => ({
     selected: 1
@@ -40,32 +44,46 @@ export default {
   <section class="constructor-grid">
 
     <aside class="constructor-grid__side-menu">
-      <ct-fieldset label="Серия">
-        <block-series />
+
+      <ct-fieldset
+        label="Серия"
+        :blockType="$blocks.BLOCK_SERIES"
+        >
+        <template scope="{ catchFocus }">
+            <block-series @focus="catchFocus"/>
+        </template>
+
       </ct-fieldset>
+
       <ct-fieldset label="Дизайн">
         <block-designs />
       </ct-fieldset>
+
       <ct-fieldset label="Фарнитура">
         <block-fittings />
       </ct-fieldset>
+
       <ct-fieldset label="Полотно снаружи">
         <block-material-outside />
       </ct-fieldset>
+
       <ct-fieldset label="Полотно внутри">
         <block-material-inside />
       </ct-fieldset>
+
       <ct-fieldset label="Коробка">
         <block-box />
       </ct-fieldset>
+
       <ct-fieldset label="Габариты">
         <block-sizes />
       </ct-fieldset>
+
     </aside>
 
     <section class="constructor-grid__top-bar">
-      <!-- <DoorCodeContainer />
-      <CopyToClipboardBtn /> -->
+      <door-code />
+      <!-- <CopyToClipboardBtn /> -->
     </section>
     <section class="constructor-grid__main-field">
       <!-- <MainView /> -->

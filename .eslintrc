@@ -3,5 +3,9 @@
     "extends": [
         "plugin:vue/essential",
         "@vue/prettier"
-    ]
+    ],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error"
+    }
 }
