@@ -1,20 +1,3 @@
-<script>
-import { mapState, mapMutations } from 'vuex';
-import constants from '@/data/';
-
-export default {
-  props: {},
-  created() {
-    this.$constants = constants;
-  },
-  computed: mapState({
-    designOutside: state => state.designs.designOutside,
-    designInside: state => state.designs.designInside
-  }),
-  methods: mapMutations(['setDesignOutside', 'setDesignInside'])
-};
-</script>
-
 <template>
   <div>
     <div class="form-unit">
@@ -54,3 +37,5 @@ export default {
 
   </div>
 </template>
+<script src="./main.js"></script>
+

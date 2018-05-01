@@ -12,13 +12,15 @@ import blockSizes from '@/components/blockSizes';
 import doorCode from '@/components/doorCode';
 import blocks from '@/data/blocks';
 import copyToClipboard from '@/components/copyToClipboard';
+import doorView from '@/components/doorView';
 
 export default {
   name: 'home',
   components: {
     ctFieldset,
     doorCode,
-    copyToClipboard
+    copyToClipboard,
+    doorView
   },
   beforeCreate() {
     this.$constants = constants;
@@ -32,7 +34,7 @@ export default {
     blockMaterialOutside,
     blockMaterialInside,
     blockBox,
-    blockSizes,
+    blockSizes
   }),
   computed: {
     artCode() {
@@ -44,45 +46,45 @@ export default {
           label: 'Серия',
           type: this.$blocks && this.$blocks.BLOCK_SERIES,
           block: this.blockSeries,
-          class: 'series',
+          class: 'series'
         },
         {
           label: 'Дизайн',
           type: this.$blocks && this.$blocks.BLOCK_DESIGN,
           block: this.blockDesigns,
-          class: 'design',
+          class: 'design'
         },
         {
           label: 'Фурнитура',
           type: this.$blocks && this.$blocks.BLOCK_FITTINGS,
           block: this.blockFittings,
-          class: 'fittings',
+          class: 'fittings'
         },
         {
           label: 'Полотно снаружи',
           type: this.$blocks && this.$blocks.BLOCK_MATERIAL_OUTSIDE,
           block: this.blockMaterialOutside,
-          class: 'material',
+          class: 'material'
         },
         {
           label: 'Полотно внутри',
           type: this.$blocks && this.$blocks.BLOCK_MATERIAL_INSIDE,
           block: this.blockMaterialInside,
-          class: 'material',
+          class: 'material'
         },
         {
           label: 'Коробка',
           type: this.$blocks && this.$blocks.BLOCK_BOX,
           block: this.blockBox,
-          class: 'box',
+          class: 'box'
         },
         {
           label: 'Габариты',
           type: this.$blocks && this.$blocks.BLOCK_SIZES,
           block: this.blockSizes,
-          class: 'size',
-        },
-      ]
+          class: 'size'
+        }
+      ];
     }
   }
 };
@@ -109,7 +111,7 @@ export default {
       <copy-to-clipboard />
     </section>
     <section class="constructor-grid__main-field">
-      <!-- <MainView /> -->
+      <door-view />
     </section>
 
   </section>

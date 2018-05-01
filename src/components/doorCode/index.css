@@ -1,0 +1,78 @@
+.door-code {
+  width: 100%;
+  /* padding: var(--gutter-size-x); */
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.door-code span {
+  display: inline-block;
+  padding: calc(var(--gutter-size-xs) / 2) calc(var(--gutter-size-xs) / 2);
+}
+
+.code-part {
+  cursor: pointer;
+  border-bottom: 2px solid;
+  margin: 0 2px;
+  border-radius: 2px;
+}
+
+.code-part.series {
+  border-color: rgba(var(--color-series-block), 1);
+}
+
+.code-part.series:hover,
+.code-part.series.active {
+  background-color: rgba(var(--color-series-block), 0.3);
+}
+
+.code-part.design {
+  border-color: rgba(var(--color-design-block), 0.4);
+}
+
+.code-part.design:hover,
+.code-part.design.active {
+  background-color: rgba(var(--color-design-block), 0.25);
+}
+
+.code-part.fittings {
+  border-color: rgba(var(--color-fittings-block), 0.3);
+}
+
+.code-part.fittings:hover,
+.code-part.fittings.active {
+  background-color: rgba(var(--color-fittings-block), 0.15);
+}
+
+.code-part.materialInside,
+.code-part.materialOutside {
+  border-color: rgba(var(--color-material-block), 0.3);
+}
+
+.code-part.materialInside:hover,
+.code-part.materialOutside:hover,
+.code-part.materialInside.active,
+.code-part.materialOutside.active {
+  background-color: rgba(var(--color-material-block), 0.15);
+}
+
+.code-part.box {
+  border-color: rgba(var(--color-box-block), 0.3);
+}
+
+.code-part.box:hover,
+.code-part.box.active {
+  background-color: rgba(var(--color-box-block), 0.15);
+}
+
+.code-part.size {
+  border-color: rgba(var(--color-size-block), 0.3);
+}
+
+.code-part.size:hover,
+.code-part.size.active {
+  background-color: rgba(var(--color-size-block), 0.15);
+}

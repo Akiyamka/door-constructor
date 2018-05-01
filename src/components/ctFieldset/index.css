@@ -1,0 +1,62 @@
+.fieldset {
+  padding: var(--gutter-size-x) calc(var(--gutter-size-xl) * 0.75);
+  border-left: 10px solid;
+}
+
+.fieldset legend {
+  display: block;
+  max-width: 100%;
+  padding-left: 0;
+  padding-bottom: var(--gutter-size-xs);
+  padding-top: var(--gutter-size-xs);
+  white-space: normal;
+  font-size: var(--font-size-xl);
+}
+
+.design {
+  border-color: rgba(var(--color-design-block), 0.4);
+}
+
+.design.active {
+  background-color: rgba(var(--color-design-block), 0.25);
+}
+
+.fieldset.series {
+  border-color: rgba(var(--color-series-block), 1);
+}
+
+.fieldset.series.active {
+  background-color: rgba(var(--color-series-block), 0.3);
+}
+
+.fieldset.fittings {
+  border-color: rgba(var(--color-fittings-block), 0.3);
+}
+
+.fieldset.fittings.active {
+  background-color: rgba(var(--color-fittings-block), 0.15);
+}
+
+.fieldset.material {
+  border-color: rgba(var(--color-material-block), 0.3);
+}
+
+.fieldset.material.active {
+  background-color: rgba(var(--color-material-block), 0.15);
+}
+
+.fieldset.box {
+  border-color: rgba(var(--color-box-block), 0.3);
+}
+
+.fieldset.box.active {
+  background-color: rgba(var(--color-box-block), 0.15);
+}
+
+.fieldset.size {
+  border-color: rgba(var(--color-size-block), 0.3);
+}
+
+.fieldset.size.active {
+  background-color: rgba(var(--color-size-block), 0.15);
+}

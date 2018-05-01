@@ -10,7 +10,7 @@ export default {
   computed: {
     ...mapState({
       series: state => state.series.series
-    }),
+    })
   },
   methods: {
     ...mapMutations(['setSeries'])

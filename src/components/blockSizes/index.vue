@@ -8,13 +8,12 @@ export default {
     ...mapState({
       width: state => Number(state.size.width),
       height: state => Number(state.size.height)
-    }),
+    })
   },
   methods: {
     ...mapMutations(['setWidth', 'setHeight'])
   }
 };
-
 </script>
 
 <template>
@@ -49,9 +48,9 @@ export default {
 </template>
 
 <style scoped>
- .el-input-number {
-   width: 100%
- }
+.el-input-number {
+  width: 100%;
+}
 </style>
 
 <style>
