@@ -1,0 +1,71 @@
+.door-view
+  --door-width: 15em
+  --door-height: 35em
+  --door-thickness: 1em
+
+  display: flex
+  flex-flow: column nowrap
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+
+.door-model
+  width: 500px
+  height: 500px
+  display: flex
+  align-items: center
+  justify-content: center
+  perspective: 800px
+  perspective-origin: center center
+  .container
+    width: 15em
+    height: 38em
+    transform-style: preserve-3d
+    animation: rotate 10s infinite linear
+
+  .side
+    position: absolute
+    opacity: .7
+
+    &.back
+      transform: translateZ(calc(var(--door-thickness) / 2 * -1))
+      background: orange
+      height: var(--door-height)
+      width: var(--door-width)
+
+    &.front
+      transform: translateZ(calc(var(--door-thickness) / 2))
+      background: gold
+      height: var(--door-height)
+      width: var(--door-width)
+
+    &.top
+      transform: translateY(calc(var(--door-thickness) / 2 * -1)) rotateX(90deg)
+      background: skyblue
+      height: var(--door-thickness)
+      width: var(--door-width)
+
+    &.bottom
+      transform: translateY(calc(var(--door-height) - var(--door-thickness) / 2)) rotateX(90deg)
+      background: steelblue
+      height: var(--door-thickness)
+      width: var(--door-width)
+
+    &.left
+      transform: translateX(calc(var(--door-thickness) / 2 * -1)) rotateY(90deg)
+      background: lightgreen
+      width: var(--door-thickness)
+      height: var(--door-height)
+
+    &.right
+      transform: translateX(calc(var(--door-width) - var(--door-thickness) / 2)) rotateY(90deg)
+      background: yellowgreen
+      width: var(--door-thickness)
+      height: var(--door-height)
+
+@keyframes rotate {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
