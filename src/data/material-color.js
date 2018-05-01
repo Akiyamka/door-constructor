@@ -1,23 +1,30 @@
 const materialColor = [
   {
     label: 'Нет Элемента',
-    value: '100'
+    value: '100',
+    color: 'lightgray'
   },
   {
     label: 'Антрацит муар RAL 7016',
-    value: '101'
+    value: '101',
+    color:
+      'linear-gradient(135deg, rgb(181,189,200) 0%,rgb(130,140,149) 36%,rgb(40,52,59) 100%)'
   },
   {
     label: 'Черный муар RAL9005',
-    value: '102'
+    value: '102',
+    color: '#151e25'
   },
   {
     label: 'Черный глянец RAL9005',
-    value: '103'
+    value: '103',
+    color:
+      'linear-gradient(135deg, rgb(0,0,0) 0%,rgb(61,61,61) 50%,rgb(40,40,40) 50%,rgb(0,0,0) 100%)'
   },
   {
     label: 'Коричнево-красный матовый RAL3011',
-    value: '104'
+    value: '104',
+    color: 'linear-gradient(135deg, rgb(206,83,45) 0%,rgb(99,24,0) 100%)'
   },
   {
     label: 'Перламутрово-рубиновый матовый RAL3032',

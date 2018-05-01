@@ -24,11 +24,15 @@ export default new Vuex.Store({
     size
   },
   state: {
-    activeBlock: undefined
+    activeBlock: undefined,
+    doorPosition: 'front'
   },
   mutations: {
     setActiveBlock(state, block) {
       state.activeBlock = block;
+    },
+    setDoorPosition(state, position) {
+      state.doorPosition = position;
     },
     copyToClipboard(state) {
       const currentCode = [

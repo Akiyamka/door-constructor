@@ -7,7 +7,7 @@
         :value="designInside"
         @change="setDesignInside"
         placeholder="Дизайн внутри"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('back') || $emit('focus')">
         <el-option
           v-for="item in $constants.designs"
           :key="item.value"
@@ -25,7 +25,7 @@
         :value="designOutside"
         @change="setDesignOutside"
         placeholder="Дизайн снаружи"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('front') || $emit('focus')">
         <el-option
           v-for="item in $constants.designs"
           :key="item.value"

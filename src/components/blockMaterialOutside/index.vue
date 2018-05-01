@@ -4,7 +4,7 @@
       <label for="material-outside-leaf">Полотно</label>
       <el-select
         id="material-outside-leaf"
-        @focus="$emit('focus')"
+        @focus="setDoorPosition('front') || $emit('focus')"
         :value="leaf"
         @change="setLeaf">
         <el-option
@@ -20,7 +20,7 @@
       <label for="material-outside-jamb">Наличник</label>
       <el-select
         id="material-outside-jamb"
-        @focus="$emit('focus')"
+        @focus="setDoorPosition('front') || $emit('focus')"
         :value="jamb"
         @change="setJamb">
         <el-option
@@ -36,7 +36,7 @@
       <label for="material-outside-onlay">Накладка</label>
       <el-select
         id="material-outside-onlay"
-        @focus="$emit('focus')"
+        @focus="setDoorPosition('front') || $emit('focus')"
         :value="onlay"
         @change="setOnlay">
         <el-option
@@ -52,7 +52,7 @@
       <label for="material-outside-glass">Стеклопакет</label>
       <el-select
         id="material-outside-glass"
-        @focus="$emit('focus')"
+        @focus="setDoorPosition('front') || $emit('focus')"
         :value="glass"
         @change="setGlass">
         <el-option

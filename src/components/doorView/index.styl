@@ -12,57 +12,76 @@
 
 .door-model
   width: 500px
-  height: 500px
+  height: 600px
   display: flex
   align-items: center
   justify-content: center
   perspective: 800px
   perspective-origin: center center
+  margin: 3em
   .container
-    width: 15em
-    height: 38em
+    width: calc(var(--door-width))
+    height: calc(var(--door-height))
     transform-style: preserve-3d
-    animation: rotate 10s infinite linear
+    transition: ease 1s transform
+    // animation: rotate 10s infinite linear
 
   .side
     position: absolute
-    opacity: .7
-
+    opacity: 1
+    background: gray
     &.back
       transform: translateZ(calc(var(--door-thickness) / 2 * -1))
-      background: orange
       height: var(--door-height)
       width: var(--door-width)
+      background-size: contain;
 
     &.front
       transform: translateZ(calc(var(--door-thickness) / 2))
-      background: gold
       height: var(--door-height)
       width: var(--door-width)
+      background-size: contain;
 
     &.top
       transform: translateY(calc(var(--door-thickness) / 2 * -1)) rotateX(90deg)
-      background: skyblue
       height: var(--door-thickness)
       width: var(--door-width)
 
     &.bottom
       transform: translateY(calc(var(--door-height) - var(--door-thickness) / 2)) rotateX(90deg)
-      background: steelblue
       height: var(--door-thickness)
       width: var(--door-width)
 
     &.left
       transform: translateX(calc(var(--door-thickness) / 2 * -1)) rotateY(90deg)
-      background: lightgreen
       width: var(--door-thickness)
       height: var(--door-height)
 
     &.right
       transform: translateX(calc(var(--door-width) - var(--door-thickness) / 2)) rotateY(90deg)
-      background: yellowgreen
       width: var(--door-thickness)
       height: var(--door-height)
+
+    object
+      width: 100%
+      height: 100%
+
+  .shadow
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 65%,rgba(0,0,0,0) 100%);
+    width: 20em
+    height: 290px
+    position: absolute
+    bottom: -9.2em
+    right: -2.25em
+    transform: scale(1.3, 0.15)
+    z-index: -1;
+
+.controls
+  & > img
+    cursor: pointer
+  .rotate
+    height: 40px
+    width: 80px
 
 @keyframes rotate {
   100% {

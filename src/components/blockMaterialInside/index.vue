@@ -6,7 +6,7 @@
         id="material-inside-leaf"
         :value="leaf"
         @change="setLeaf"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('back') || $emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -22,7 +22,7 @@
         id="material-inside-jamb"
         :value="jamb"
         @change="setJamb"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('back') || $emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -38,7 +38,7 @@
         id="material-inside-onlay"
         :value="onlay"
         @change="setOnlay"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('back') || $emit('focus')">
         <el-option
           v-for="item in $constants.materialColor"
           :key="item.value"
@@ -54,7 +54,7 @@
         id="material-inside-glass"
         :value="glass"
         @change="setGlass"
-        @focus="$emit('focus')">
+        @focus="setDoorPosition('back') || $emit('focus')">
         <el-option
           v-for="item in $constants.glass"
           :key="item.value"

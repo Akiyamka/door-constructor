@@ -1,0 +1,51 @@
+<svg width="300" height="680" viewBox="0 0 300 680" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="a1" clip-path="url(#clip0)">
+<g id="Rectangle">
+<rect x="1" y="1" width="20" height="546" stroke-width="2" transform="translate(139 66)" stroke="black"/>
+</g>
+<g id="Group">
+<g id="Line">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(183 79)" stroke="black"/>
+</g>
+<g id="Line_2">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(183 209)" stroke="black"/>
+</g>
+<g id="Line_3">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(183 340)" stroke="black"/>
+</g>
+<g id="Line_4">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(183 471)" stroke="black"/>
+</g>
+<g id="Line_5">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(183 601)" stroke="black"/>
+</g>
+</g>
+<g id="Group_2">
+<g id="Line_6">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(24 79)" stroke="black"/>
+</g>
+<g id="Line_7">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(24 209)" stroke="black"/>
+</g>
+<g id="Line_8">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(24 340)" stroke="black"/>
+</g>
+<g id="Line_9">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(24 471)" stroke="black"/>
+</g>
+<g id="Line_10">
+<line y1="-1" x2="93" y2="-1" stroke-width="2" transform="translate(24 601)" stroke="black"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="300" height="680" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

@@ -12,10 +12,14 @@ export default {
     onlay: state => state.onlay,
     glass: state => state.glass
   }),
-  methods: mapMutations('materialOutside', [
-    'setLeaf',
-    'setJamb',
-    'setOnlay',
-    'setGlass'
-  ])
+  methods: {
+    ...mapMutations('materialOutside', [
+      'setLeaf',
+      'setJamb',
+      'setOnlay',
+      'setGlass',
+      'setDoorPosition'
+    ]),
+    ...mapMutations(['setDoorPosition'])
+  }
 };
