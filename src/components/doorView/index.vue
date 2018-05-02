@@ -32,6 +32,19 @@ export default {
         const material = this.$constants.materialColor.find(m => m.value === this.store.materialOutside.leaf);
         return material && material.color ? material.color : 'gray';
       },
+      getOutsideStyle() {
+        /* https://stackoverflow.com/questions/27812161/how-do-i-define-or-reference-a-variable-in-svg */
+        const qSOptions = {
+          glass: '#008000'
+        };
+
+        return `${
+            this.currentOutsideSkin
+          }?${
+            // Create query string foo=bar&baz=bug
+            Object.keys(qSOptions).map(key => `${ key }=${ qSOptions[key] }`).join('&')
+          }`;
+      },
       rotation() {
          return {
           front: 0,
@@ -42,7 +55,6 @@ export default {
   methods: {
     ...mapMutations(['setActiveBlock', 'setDoorPosition']),
     changeDoorSide() {
-      console.log('test')
       this.setDoorPosition(this.rotation >= 180 ? 'front' : 'back')
     }
   }
@@ -60,7 +72,8 @@ export default {
         <div class="side back" :style="{
           'background': currentInsideColor,
           }">
-          <object type="image/svg+xml" :data="currentInsideSkin">Your browser does not support SVGs</object></div>
+          <object type="image/svg+xml" :data="currentInsideSkin">Your browser does not support SVGs</object>
+          </div>
         <div class="side left"></div>
         <div class="side right"></div>
         <div class="side top"></div>
@@ -68,7 +81,7 @@ export default {
         <div class="side front" :style="{
           'background': currentOutsideColor,
           }">
-            <object type="image/svg+xml" :data="currentOutsideSkin">Your browser does not support SVGs</object>
+            <object type="image/svg+xml" :data="getOutsideStyle">Your browser does not support SVGs</object>
           </div>
           <div class="shadow"></div>
       </div>
